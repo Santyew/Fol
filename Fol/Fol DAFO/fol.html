@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Habilidades Blandas y DAFO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        #languageBtn {
+            display: block;
+            margin: 10px auto;
+            padding: 8px 16px;
+            cursor: pointer;
+            background-color: #6fa8dc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        /* Estilos para la tabla de habilidades */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #6fa8dc;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #e9f0f9;
+        }
+        tr:hover {
+            background-color: #d0e4f7;
+        }
+        /* Estilos para DAFO con diferentes colores por columna */
+        #dafoTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        #dafoTable thead th {
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+            font-size: 1.2em;
+        }
+        #dafoTable tbody td {
+            padding: 10px;
+            vertical-align: top;
+            height: 150px;
+            border: 1px solid #ccc;
+        }
+        /* Colores específicos para cada columna en DAFO */
+        .debilidades {
+            background-color: #f44336; /* rojo */
+            color: white;
+        }
+        .fortalezas {
+            background-color: #4CAF50; /* verde */
+            color: white;
+        }
+        .oportunidades {
+            background-color: #2196F3; /* azul */
+            color: white;
+        }
+        .amenazas {
+            background-color: #FF9800; /* naranja */
+            color: white;
+        }
+        /* Encabezados del DAFO */
+        #dafoTitle {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 2em;
+            color: #333;
+        }
+        /* Responsive para pantallas pequeñas */
+        @media(max-width: 768px) {
+            table, thead, tbody, tr, th, td {
+                display: block;
+                width: 100%;
+            }
+            #dafoTable thead {
+                display: none;
+            }
+            #dafoTable tbody td {
+                position: relative;
+                padding-left: 50%;
+                margin-bottom: 15px;
+                border: none;
+            }
+            #dafoTable tbody td::before {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+            #dafoTable tbody td:nth-of-type(1)::before { content: "Debilidades"; }
+            #dafoTable tbody td:nth-of-type(2)::before { content: "Fortalezas"; }
+            #dafoTable tbody td:nth-of-type(3)::before { content: "Oportunidades"; }
+            #dafoTable tbody td:nth-of-type(4)::before { content: "Amenazas"; }
+        }
+    </style>
+</head>
+<body>
+
+<button id="languageBtn">Cambiar a Inglés</button>
+
+<h1 id="mainTitle">Habilidades Blandas</h1>
+
+<table id="habilidadesTable">
+    <thead>
+        <tr>
+            <th>Diferencias de habilidades blandas</th>
+            <th>Desarrollador de html</th>
+            <th>Desarrollador de css</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Learning agility</td>
+            <td>Capacidad y ganas para aprender teoría y practicar nuevas cosas</td>
+            <td>Capacidad y ganas para aprender teoría y practicar nuevas cosas en la estructura del css</td>
+        </tr>
+        <tr>
+            <td>Trabajo en equipo</td>
+            <td>Colaborar eficazmente con otros para alcanzar objetivos comunes.</td>
+            <td>Colaborar eficazmente con otros para alcanzar objetivos comunes sobre el css</td>
+        </tr>
+        <tr>
+            <td>Empatía</td>
+            <td>Entender y compartir los sentimientos de los demás a la hora proponer diferentes ideas.</td>
+            <td>Entender y compartir los sentimientos de los demás.</td>
+        </tr>
+        <tr>
+            <td>Flexibilidad</td>
+            <td>Adaptarse a cambios y nuevas circunstancias con facilidad.</td>
+            <td>Adaptarse a planes e ideas de otros para poder desarrollar el proyecto.</td>
+        </tr>
+        <tr>
+            <td>Resolución de conflictos</td>
+            <td>Gestionar y resolver desacuerdos de manera constructiva.</td>
+            <td>Gestionar, resolver diseños y proponer ideas.</td>
+        </tr>
+        <tr>
+            <td>Comunicación efectiva</td>
+            <td> Se relaciona con escuchar y comprender el todo sobre la información y datos que se reciben. En resumen, implica entender al otro y hacerse entender hacia los otros.</td>
+            <td> Se relaciona con escuchar y comprender el todo sobre la información y datos que se reciben sobre la estructura de colores y caligrafía.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h1 id="dafoTitle">Análisis DAFO</h1>
+<table id="dafoTable">
+    <thead>
+        <tr>
+            <th class="debilidades">Debilidades</th>
+            <th class="fortalezas">Fortalezas</th>
+            <th class="oportunidades">Oportunidades</th>
+            <th class="amenazas">Amenazas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="debilidades">
+                - Recursos limitados<br/>
+                - Baja presencia en línea<br/>
+                - Poca rotación del personal
+            </td>
+            <td class="fortalezas">
+                - Equipo especializado en páginas web<br/>
+                - Buenas explicaciones de los objetivos<br/>
+                - Colaboración con ONGs
+            </td>
+            <td class="oportunidades">
+                - Nuevos mercados emergentes<br/>
+                - Tecnologías digitales<br/>
+                - Alianzas estratégicas
+            </td>
+            <td class="amenazas">
+                - Competencia creciente<br/>
+                - Cambios regulatorios<br/>
+                - Factores económicos adversos
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    const btn = document.getElementById('languageBtn');
+    const mainTitle = document.getElementById('mainTitle');
+    const dafoTitle = document.getElementById('dafoTitle');
+
+    const habilidadesTableBody = document.querySelector('#habilidadesTable tbody');
+    const dafoTableBody = document.querySelector('#dafoTable tbody');
+
+    let inEnglish = false;
+
+    const texts = {
+        es: {
+            button: "Cambiar a Inglés",
+            mainTitle: "Habilidades Blandas",
+            habilidades: [
+                {title: "Learning agility", devHtml: "Capacidad y ganas para aprender teoría y practicar nuevas cosas", devCss: "Capacidad y ganas para aprender teoría y practicar nuevas cosas en la estructura del css"},
+                {title: "Trabajo en equipo", devHtml: "Colaborar eficazmente con otros para alcanzar objetivos comunes.", devCss: "Colaborar eficazmente con otros para alcanzar objetivos comunes sobre el css"},
+                {title: "Empatía", devHtml: "Entender y compartir los sentimientos de los demás a la hora proponer diferentes ideas.", devCss: "Entender y compartir los sentimientos de los demás."},
+                {title: "Flexibilidad", devHtml: "Adaptarse a cambios y nuevas circunstancias con facilidad.", devCss: "Adaptarse a planes e ideas de otros para poder desarrollar el proyecto."},
+                {title: "Resolución de conflictos", devHtml: "Gestionar y resolver desacuerdos de manera constructiva.", devCss: "Gestionar, resolver diseños y proponer ideas."},
+                {title: "Comunicación efectiva", devHtml: "Se relaciona con escuchar y comprender el todo sobre la información y datos que se reciben. En resumen, implica entender al otro y hacerse entender hacia los otros.", devCss: "Se relaciona con escuchar y comprender el todo sobre la información y datos que se reciben sobre la estructura de colores y caligrafía."}
+            ],
+            dafo: {
+                title: "Análisis DAFO",
+                rows: [
+                    {
+                        debilidades: "- Recursos limitados<br/>- Baja presencia en línea<br/>- Poca rotación del personal",
+                        fortalezas: "- Equipo especializado en páginas web<br/>- Buenas explicaciones de los objetivos<br/>- Colaboración con ONGs",
+                        oportunidades: "- Nuevos mercados emergentes<br/>- Tecnologías digitales<br/>- Alianzas estratégicas",
+                        amenazas: "- Competencia creciente<br/>- Cambios regulatorios<br/>- Factores económicos adversos"
+                    }
+                ]
+            }
+        },
+        en: {
+            button: "Switch to Spanish",
+            mainTitle: "Soft Skills",
+            habilidades: [
+                {title: "Learning agility", devHtml: "Ability and willingness to learn theory and practice new things", devCss: "Ability and willingness to learn theory and practice new things in the CSS structure"},
+                {title: "Teamwork", devHtml: "Collaborate effectively with others to achieve common goals.", devCss: "Collaborate effectively with others to achieve common goals regarding CSS"},
+                {title: "Empathy", devHtml: "Understand and share the feelings of others when proposing different ideas.", devCss: "Understand and share the feelings of others."},
+                {title: "Flexibility", devHtml: "Adapt to changes and new circumstances easily.", devCss: "Adapt to others' plans and ideas to develop the project."},
+                {title: "Conflict resolution", devHtml: "Manage and resolve disagreements constructively.", devCss: "Manage, resolve designs, and propose ideas."},
+                {title: "Effective communication", devHtml: "Relates to listening and understanding all about the information and data received. In summary, it involves understanding others and making oneself understood.", devCss: "Relates to listening and understanding all about the information and data received about color schemes and typography."}
+            ],
+            dafo: {
+                title: "SWOT Analysis",
+                rows: [
+                    {
+                        debilidades: "- Limited resources<br/>- Low online presence<br/>- Low staff turnover",
+                        fortalezas: "- Specialized team in web pages<br/>- Good explanations of objectives<br/>- Collaboration with NGOs",
+                        oportunidades: "- Emerging new markets<br/>- Digital technologies<br/>- Strategic alliances",
+                        amenazas: "- Growing competition<br/>- Regulatory changes<br/>- Adverse economic factors"
+                    }
+                ]
+            }
+        }
+    };
+
+    function updateContent() {
+        const lang = inEnglish ? 'en' : 'es';
+
+        /**
+         *  Actualizar botón
+         * 
+        */
+        btn.textContent = texts[lang].button;
+
+        /**
+         * Actualizar título principal
+         * 
+         */
+        mainTitle.textContent = texts[lang].mainTitle;
+
+        /** 
+         * Actualizar habilidades
+         */
+        habilidadesTableBody.innerHTML = '';
+        texts[lang].habilidades.forEach(h => {
+            const row = document.createElement('tr');
+
+            const tdTitle = document.createElement('td');
+            tdTitle.textContent = h.title;
+            row.appendChild(tdTitle);
+
+            const tdDevHtml = document.createElement('td');
+            tdDevHtml.innerHTML = h.devHtml;
+            row.appendChild(tdDevHtml);
+
+            const tdDevCss = document.createElement('td');
+            tdDevCss.innerHTML = h.devCss;
+            row.appendChild(tdDevCss);
+
+            habilidadesTableBody.appendChild(row);
+        });
+
+        /** 
+         * Actualizar título DAFO
+         */
+        document.getElementById('dafoTitle').textContent = texts[lang].dafo.title;
+
+        /** 
+         * Actualizar contenido DAFO
+         * 
+        */
+        const rowData = texts[lang].dafo.rows[0];
+        document.querySelector('#dafoTable tbody').innerHTML = `
+            <tr>
+                <td class="debilidades">${rowData.debilidades}</td>
+                <td class="fortalezas">${rowData.fortalezas}</td>
+                <td class="oportunidades">${rowData.oportunidades}</td>
+                <td class="amenazas">${rowData.amenazas}</td>
+            </tr>
+        `;
+    }
+
+    document.getElementById('languageBtn').addEventListener('click', () => {
+        inEnglish = !inEnglish;
+        updateContent();
+    });
+
+    /** 
+     * Inicializar con contenido en español
+     * 
+    */
+    updateContent();
+</script>
+
+</body>
+</html>
